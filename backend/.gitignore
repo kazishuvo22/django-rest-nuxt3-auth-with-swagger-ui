@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+*/venv/
+*/env/
+*/.venv/
+
+# Django
+*.log
+*.pot
+*.mo
+local_settings.py
+db.sqlite3
+media/
+static/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Docker
+*.env # Exclude local .env, but usually you commit a .env.example
+!/backend/.env # If you want to include .env for backend only for local dev (risky for prod)
+# Ensure .env is listed in the main .gitignore if you have one at the project root.
+
+# Docker volumes and build artifacts
+.dockerignore
+!Dockerfile
+!docker-compose.yml
+/media/

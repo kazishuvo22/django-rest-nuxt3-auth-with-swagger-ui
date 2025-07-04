@@ -1,0 +1,20 @@
+#version: '3.8'
+
+services:
+  frontend:
+    build: . # Build from current directory (frontend/)
+    container_name: sg_frontend
+    command: npm run dev # Or 'npm run start' for production build
+    volumes:
+      - .:/app # Mount current frontend directory to /app in container
+      - /app/node_modules # Sync node_modules between host and container
+    ports:
+      - "3000:3000" # Expose Nuxt.js port
+    env_file:
+      - ./.env # Frontend-specific environment variables
+    networks:
+      - frontend_network
+
+networks:
+  frontend_network:
+    driver: bridge
